@@ -1,0 +1,18 @@
+/*abstracts*/
+@use './scss/abstracts/variables';
+@use './scss/abstracts/mixins';
+
+
+/*base*/
+@use './scss/base/base';
+@use './scss/base/resets';
+
+/* layout */
+
+@use './scss/layouts/navbar';
+@use './scss/layouts/slide';
+
+
+/* components */
+
+@use './scss/components/button'

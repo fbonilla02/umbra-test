@@ -1,0 +1,15 @@
+.slide__container{
+    background-color: var(--pink-color);
+    color: var(--white-color);
+    margin: 20px;
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+
+    h1{
+        font-size: 30px;
+    }
+}
