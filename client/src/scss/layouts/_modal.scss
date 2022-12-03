@@ -33,6 +33,7 @@
     .comment__container{
         display: flex;
         flex-direction: column;
+        gap: 8px;
         padding: 20px;
         min-width: 300px;
         width: 400px;
@@ -42,5 +43,12 @@
     }
     .comment__info{
         margin: 10px 0px;
+
+        
+        p:nth-child(2){
+            font-size: 14px;
+            font-style: italic;
+            
+        }
     }
 }

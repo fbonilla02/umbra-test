@@ -4,16 +4,11 @@ import { useItem } from '../context/ItemContext';
 
 export default function ImageContainer() {
 
-    const [openModal, setOpenModal] = useState(false)
-
-    const {item, loadItems } = useItem()
+    const {item } = useItem()
     const Navigate = useNavigate()
    
-    useEffect(()=>{
-        loadItems()
-    },[])
     
-   
+ 
 
     return (
     <div className='image-container'>

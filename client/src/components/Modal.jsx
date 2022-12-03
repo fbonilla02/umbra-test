@@ -8,7 +8,6 @@ export default function Modal() {
   const [item, setItem] = useState({})
   const params = useParams()
   const Navigate = useNavigate()
-  console.log(params.id);
 
   useEffect(() => {
     const loadItem = async()=>{
@@ -22,7 +21,6 @@ export default function Modal() {
     getComments(params.id)
 
   }, [])
-  console.log(comments);
   return (
     <div className='modal__container'>
     <section className='cross-container'>

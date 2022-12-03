@@ -14,10 +14,12 @@ export const useItem = () =>{
 export const ItemContextProvider = ({children})=>{
     const [item, setItem] = useState([])
     const [comments, setComments] = useState([])
+    const [isloading, setIsloading] = useState(true)
 
     const loadItems = async() =>{
             const response = await getApiRequest()
             setItem(response)
+            setIsloading(false)
     }
 
     const getItem = async(id)=>{
@@ -32,7 +34,6 @@ export const ItemContextProvider = ({children})=>{
     const getComments = async(id)=>{
         try {
             const response = await commentRequest(id)
-            console.log(response);
             setComments(response)
         } catch (error) {
             console.error(error);
@@ -40,7 +41,7 @@ export const ItemContextProvider = ({children})=>{
     }
 
     return(
-        <ItemContext.Provider value={{item, loadItems, getItem,comments, getComments}}>
+        <ItemContext.Provider value={{item, loadItems, getItem,comments, getComments, isloading}}>
             {children}
         </ItemContext.Provider>
     )
