@@ -1,13 +1,14 @@
 import React from 'react'
 import Slide from '../components/Slide'
+import ImageContainer from './ImageContainer'
 
 export default function Mainpage() {
 
-  
+
   return (
-    <div>
+    <>
     <Slide/>
-    
-    </div>
+    <ImageContainer/>
+    </>
   )
 }
