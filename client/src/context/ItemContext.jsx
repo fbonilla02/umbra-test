@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react'
-import { getApiRequest } from '../api/item.Api'
+import { commentRequest, getApiRequest, itemidRequest } from '../api/item.Api'
 
 export const ItemContext = createContext()
 
@@ -13,15 +13,34 @@ export const useItem = () =>{
 
 export const ItemContextProvider = ({children})=>{
     const [item, setItem] = useState([])
+    const [comments, setComments] = useState([])
 
     const loadItems = async() =>{
-
             const response = await getApiRequest()
-           setItem(response)
+            setItem(response)
+    }
+
+    const getItem = async(id)=>{
+        try {
+            const response = await itemidRequest(id)
+            return response
+        } catch (error) {
+            console.error(error);
+        }
+        
+    }
+    const getComments = async(id)=>{
+        try {
+            const response = await commentRequest(id)
+            console.log(response);
+            setComments(response)
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     return(
-        <ItemContext.Provider value={{item, loadItems}}>
+        <ItemContext.Provider value={{item, loadItems, getItem,comments, getComments}}>
             {children}
         </ItemContext.Provider>
     )
