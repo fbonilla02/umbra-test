@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import Loading from '../components/Loading';
 import { useItem } from '../context/ItemContext';
 
 export default function ImageContainer() {
 
-    const {item } = useItem()
+    const {item, isloading } = useItem()
     const Navigate = useNavigate()
    
-    
+    if (isloading) {
+        return(
+          <Loading/>
+        )
+      }
  
 
     return (

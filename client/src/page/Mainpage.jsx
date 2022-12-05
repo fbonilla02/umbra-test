@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Slide from '../components/Slide'
 import { useItem } from '../context/ItemContext';
 import ImageContainer from './ImageContainer'
-import Logo from '../assets/logo.png'
+import Loading from '../components/Loading';
 
 export default function Mainpage() {
 
@@ -12,14 +12,10 @@ export default function Mainpage() {
     loadItems()
 
 },[])
-  
-   console.log(isloading);
     if (isloading) {
-        return (
-          <div className='loader'>
-          <img src={Logo} alt='logo'/>
-        </div>
-        );
+        return(
+          <Loading/>
+        )
       }
 
   return (
