@@ -23,7 +23,7 @@ abra [http://localhost:5173/](http://localhost:5173/) para ver en el navegador.
 
 ![image](https://user-images.githubusercontent.com/53198057/205536180-994fd35a-5739-4624-8d89-440eb53aa245.png)
 
-#Despliegue
+# Despliegue
 
 El despliegue del backend lo realice usando Railway Y el despliegue del front lo realice en netlify
 
